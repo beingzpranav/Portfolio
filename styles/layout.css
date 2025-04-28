@@ -1,0 +1,99 @@
+.page-entrance-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #030712;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeOut 0.5s ease-in-out 3s forwards;
+  pointer-events: none;
+}
+
+.code-reveal {
+  font-family: 'Courier New', monospace;
+  color: #e2e8f0;
+  text-align: left;
+  max-width: 90%;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideUp 0.5s ease-in-out 0.3s forwards;
+}
+
+.code-line {
+  height: 1.6em;
+  overflow: hidden;
+  white-space: nowrap;
+  margin: 0.2em 0;
+  position: relative;
+}
+
+.code-line::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  background: #030712;
+  animation: typing 2.5s steps(40, end) forwards;
+}
+
+.keyword {
+  color: #93c5fd;
+}
+
+.variable {
+  color: #c4b5fd;
+}
+
+.string {
+  color: #86efac;
+}
+
+.indent {
+  display: inline-block;
+  width: 2em;
+}
+
+.line1::after {
+  animation-delay: 0.3s;
+}
+
+.line2::after {
+  animation-delay: 0.8s;
+}
+
+.line3::after {
+  animation-delay: 1.3s;
+}
+
+.line4::after {
+  animation-delay: 1.8s;
+}
+
+.line5::after {
+  animation-delay: 2.3s;
+}
+
+.line6::after {
+  animation-delay: 2.8s;
+}
+
+@keyframes typing {
+  from { width: 100%; }
+  to { width: 0; }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; visibility: visible; }
+  to { opacity: 0; visibility: hidden; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+} 

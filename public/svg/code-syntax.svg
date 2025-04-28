@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="800" viewBox="0 0 800 800">
+  <!-- Code Editor Window -->
+  <g id="code-editor">
+    <rect x="100" y="100" width="600" height="400" rx="10" fill="none" stroke="#0ea5e9" stroke-width="4"/>
+    <rect x="100" y="100" width="600" height="30" rx="10 10 0 0" fill="none" stroke="#0ea5e9" stroke-width="4"/>
+    <circle cx="120" cy="115" r="5" fill="#ef4444"/>
+    <circle cx="140" cy="115" r="5" fill="#f97316"/>
+    <circle cx="160" cy="115" r="5" fill="#22c55e"/>
+  </g>
+  
+  <!-- Code Syntax Lines -->
+  <g id="code-syntax">
+    <!-- Line Numbers -->
+    <text x="120" y="160" fill="#64748b" font-family="monospace" font-size="12">1</text>
+    <text x="120" y="190" fill="#64748b" font-family="monospace" font-size="12">2</text>
+    <text x="120" y="220" fill="#64748b" font-family="monospace" font-size="12">3</text>
+    <text x="120" y="250" fill="#64748b" font-family="monospace" font-size="12">4</text>
+    <text x="120" y="280" fill="#64748b" font-family="monospace" font-size="12">5</text>
+    <text x="120" y="310" fill="#64748b" font-family="monospace" font-size="12">6</text>
+    <text x="120" y="340" fill="#64748b" font-family="monospace" font-size="12">7</text>
+    <text x="120" y="370" fill="#64748b" font-family="monospace" font-size="12">8</text>
+    <text x="120" y="400" fill="#64748b" font-family="monospace" font-size="12">9</text>
+    <text x="120" y="430" fill="#64748b" font-family="monospace" font-size="12">10</text>
+    <text x="120" y="460" fill="#64748b" font-family="monospace" font-size="12">11</text>
+    
+    <!-- Code Lines -->
+    <text x="150" y="160" fill="#22d3ee" font-family="monospace" font-size="12">import</text>
+    <text x="200" y="160" fill="#e2e8f0" font-family="monospace" font-size="12">React</text>
+    <text x="240" y="160" fill="#22d3ee" font-family="monospace" font-size="12">from</text>
+    <text x="280" y="160" fill="#a5f3fc" font-family="monospace" font-size="12">'react';</text>
+    
+    <text x="150" y="190" fill="#22d3ee" font-family="monospace" font-size="12">const</text>
+    <text x="190" y="190" fill="#f472b6" font-family="monospace" font-size="12">CodeComponent</text>
+    <text x="300" y="190" fill="#e2e8f0" font-family="monospace" font-size="12">=</text>
+    <text x="310" y="190" fill="#22d3ee" font-family="monospace" font-size="12">() =></text>
+    <text x="350" y="190" fill="#e2e8f0" font-family="monospace" font-size="12">{</text>
+    
+    <text x="170" y="220" fill="#22d3ee" font-family="monospace" font-size="12">const</text>
+    <text x="210" y="220" fill="#38bdf8" font-family="monospace" font-size="12">[count, setCount]</text>
+    <text x="320" y="220" fill="#e2e8f0" font-family="monospace" font-size="12">=</text>
+    <text x="330" y="220" fill="#f472b6" font-family="monospace" font-size="12">useState</text>
+    <text x="390" y="220" fill="#e2e8f0" font-family="monospace" font-size="12">(0);</text>
+    
+    <text x="170" y="250" fill="#22d3ee" font-family="monospace" font-size="12">const</text>
+    <text x="210" y="250" fill="#f472b6" font-family="monospace" font-size="12">handleClick</text>
+    <text x="290" y="250" fill="#e2e8f0" font-family="monospace" font-size="12">=</text>
+    <text x="300" y="250" fill="#22d3ee" font-family="monospace" font-size="12">() =></text>
+    <text x="340" y="250" fill="#e2e8f0" font-family="monospace" font-size="12">{</text>
+    
+    <text x="190" y="280" fill="#f472b6" font-family="monospace" font-size="12">setCount</text>
+    <text x="250" y="280" fill="#e2e8f0" font-family="monospace" font-size="12">(</text>
+    <text x="260" y="280" fill="#22d3ee" font-family="monospace" font-size="12">prev</text>
+    <text x="290" y="280" fill="#e2e8f0" font-family="monospace" font-size="12">=></text>
+    <text x="320" y="280" fill="#22d3ee" font-family="monospace" font-size="12">prev</text>
+    <text x="350" y="280" fill="#e2e8f0" font-family="monospace" font-size="12">+</text>
+    <text x="360" y="280" fill="#a5f3fc" font-family="monospace" font-size="12">1</text>
+    <text x="370" y="280" fill="#e2e8f0" font-family="monospace" font-size="12">);</text>
+    
+    <text x="170" y="310" fill="#e2e8f0" font-family="monospace" font-size="12">};</text>
+    
+    <text x="170" y="340" fill="#22d3ee" font-family="monospace" font-size="12">return</text>
+    <text x="220" y="340" fill="#e2e8f0" font-family="monospace" font-size="12">(</text>
+    
+    <text x="190" y="370" fill="#0ea5e9" font-family="monospace" font-size="12">&lt;div</text>
+    <text x="230" y="370" fill="#22d3ee" font-family="monospace" font-size="12">className</text>
+    <text x="300" y="370" fill="#e2e8f0" font-family="monospace" font-size="12">=</text>
+    <text x="310" y="370" fill="#a5f3fc" font-family="monospace" font-size="12">"container"</text>
+    <text x="390" y="370" fill="#0ea5e9" font-family="monospace" font-size="12">&gt;</text>
+    
+    <text x="210" y="400" fill="#0ea5e9" font-family="monospace" font-size="12">&lt;button</text>
+    <text x="270" y="400" fill="#22d3ee" font-family="monospace" font-size="12">onClick</text>
+    <text x="330" y="400" fill="#e2e8f0" font-family="monospace" font-size="12">=</text>
+    <text x="340" y="400" fill="#e2e8f0" font-family="monospace" font-size="12">{</text>
+    <text x="350" y="400" fill="#f472b6" font-family="monospace" font-size="12">handleClick</text>
+    <text x="430" y="400" fill="#e2e8f0" font-family="monospace" font-size="12">}</text>
+    <text x="440" y="400" fill="#0ea5e9" font-family="monospace" font-size="12">&gt;</text>
+    <text x="450" y="400" fill="#e2e8f0" font-family="monospace" font-size="12">Count: {count}</text>
+    <text x="550" y="400" fill="#0ea5e9" font-family="monospace" font-size="12">&lt;/button&gt;</text>
+    
+    <text x="190" y="430" fill="#0ea5e9" font-family="monospace" font-size="12">&lt;/div&gt;</text>
+    
+    <text x="170" y="460" fill="#e2e8f0" font-family="monospace" font-size="12">);</text>
+  </g>
+  
+  <!-- Cursor Animation -->
+  <rect id="cursor" x="550" y="400" width="2" height="14" fill="#f472b6" opacity="0.8">
+    <animate 
+      attributeName="opacity" 
+      values="0;1;1;0" 
+      dur="1.5s" 
+      repeatCount="indefinite" 
+    />
+  </rect>
+  
+  <!-- Selection Area -->
+  <rect id="selection" x="260" y="276" width="110" height="16" fill="#3b82f6" opacity="0.3" />
+  
+  <!-- API Schema Diagram -->
+  <g id="api-schema" transform="translate(250, 550)">
+    <rect x="0" y="0" width="120" height="60" rx="5" fill="none" stroke="#22d3ee" stroke-width="2" />
+    <text x="60" y="35" fill="#22d3ee" font-family="Arial" font-size="12" text-anchor="middle">User</text>
+    
+    <rect x="200" y="0" width="120" height="60" rx="5" fill="none" stroke="#22d3ee" stroke-width="2" />
+    <text x="260" y="35" fill="#22d3ee" font-family="Arial" font-size="12" text-anchor="middle">Posts</text>
+    
+    <rect x="100" y="120" width="120" height="60" rx="5" fill="none" stroke="#22d3ee" stroke-width="2" />
+    <text x="160" y="155" fill="#22d3ee" font-family="Arial" font-size="12" text-anchor="middle">Comments</text>
+    
+    <!-- Connection Lines -->
+    <line x1="120" y1="30" x2="200" y2="30" stroke="#22d3ee" stroke-width="2" />
+    <polygon points="195,25 205,30 195,35" fill="#22d3ee" />
+    
+    <line x1="210" y1="60" x2="160" y2="120" stroke="#22d3ee" stroke-width="2" />
+    <polygon points="155,115 165,125 165,115" fill="#22d3ee" />
+    
+    <line x1="100" y1="150" x2="60" y2="60" stroke="#22d3ee" stroke-width="2" />
+    <polygon points="55,65 65,55 65,65" fill="#22d3ee" />
+  </g>
+</svg> 

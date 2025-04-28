@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+  <!-- Abstract waves -->
+  <symbol id="wave-1" viewBox="0 0 1440 320">
+    <path fill="currentColor" fill-opacity="0.1" d="M0,96L48,112C96,128,192,160,288,186.7C384,213,480,235,576,224C672,213,768,171,864,170.7C960,171,1056,213,1152,202.7C1248,192,1344,128,1392,96L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+  </symbol>
+  
+  <!-- Curved lines -->
+  <symbol id="curved-line" viewBox="0 0 100 30">
+    <path d="M0,20 Q50,0 100,20" fill="none" stroke="currentColor" stroke-width="0.5" />
+  </symbol>
+
+  <!-- Code bracket -->
+  <symbol id="code-bracket" viewBox="0 0 24 24">
+    <path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z" fill="currentColor"/>
+  </symbol>
+
+  <!-- Dots pattern -->
+  <symbol id="dots-pattern" viewBox="0 0 80 80">
+    <circle cx="10" cy="10" r="2" fill="currentColor" />
+    <circle cx="30" cy="10" r="2" fill="currentColor" />
+    <circle cx="50" cy="10" r="2" fill="currentColor" />
+    <circle cx="70" cy="10" r="2" fill="currentColor" />
+    <circle cx="10" cy="30" r="2" fill="currentColor" />
+    <circle cx="30" cy="30" r="2" fill="currentColor" />
+    <circle cx="50" cy="30" r="2" fill="currentColor" />
+    <circle cx="70" cy="30" r="2" fill="currentColor" />
+    <circle cx="10" cy="50" r="2" fill="currentColor" />
+    <circle cx="30" cy="50" r="2" fill="currentColor" />
+    <circle cx="50" cy="50" r="2" fill="currentColor" />
+    <circle cx="70" cy="50" r="2" fill="currentColor" />
+    <circle cx="10" cy="70" r="2" fill="currentColor" />
+    <circle cx="30" cy="70" r="2" fill="currentColor" />
+    <circle cx="50" cy="70" r="2" fill="currentColor" />
+    <circle cx="70" cy="70" r="2" fill="currentColor" />
+  </symbol>
+
+  <!-- Squiggly line -->
+  <symbol id="squiggly-line" viewBox="0 0 100 20">
+    <path d="M0,10 Q10,5 20,10 T40,10 T60,10 T80,10 T100,10" fill="none" stroke="currentColor" stroke-width="0.8" />
+  </symbol>
+
+  <!-- Abstract shape 1 -->
+  <symbol id="abstract-shape-1" viewBox="0 0 200 200">
+    <path d="M37,-57.1C49.2,-52.2,61.3,-44.3,68.7,-32.5C76.1,-20.8,78.8,-5.2,75.9,9.2C73,23.6,64.4,36.8,53.7,49.5C42.9,62.2,30,74.4,14.5,78.5C-1,82.7,-19,78.9,-35.2,71.4C-51.5,64,-65.9,53,-72.8,38.6C-79.6,24.2,-78.9,6.5,-74.4,-9.3C-69.9,-25.1,-61.6,-39,-49.8,-44C-38,-49,-22.5,-45.2,-9.2,-42.8C4.1,-40.5,24.8,-62,37,-57.1Z" transform="translate(100 100)" fill="currentColor"/>
+  </symbol>
+
+  <!-- Abstract shape 2 -->
+  <symbol id="abstract-shape-2" viewBox="0 0 200 200">
+    <path d="M46.4,-78.1C59.2,-71.2,68.4,-56.8,74.2,-42C80,-27.2,82.5,-13.6,79.8,-1.5C77.2,10.5,69.3,21,61.9,32.3C54.5,43.5,47.5,55.3,37.4,64.5C27.2,73.7,13.6,80.3,-0.6,81.3C-14.8,82.3,-29.6,77.9,-43.3,70.6C-57,63.3,-69.6,53.2,-76.6,40.1C-83.6,27,-85,10.8,-82.1,-3.9C-79.3,-18.6,-72.2,-31.7,-62.9,-42.3C-53.6,-52.8,-42.1,-60.8,-30,-66.2C-17.9,-71.6,-5.3,-74.4,7.6,-77.5C20.5,-80.7,33.6,-84.9,46.4,-78.1Z" transform="translate(100 100)" fill="currentColor"/>
+  </symbol>
+
+  <!-- Abstract shape 3 - more complex -->
+  <symbol id="abstract-shape-3" viewBox="0 0 200 200">
+    <path d="M57.6,-58.4C71.1,-47.1,76.9,-23.6,74.6,-2.3C72.3,19,62,38,46.7,52.2C31.5,66.4,11.4,75.9,-7.1,75.9C-25.6,75.9,-42.4,66.5,-56.4,52.3C-70.3,38.1,-81.2,19,-82,0.8C-82.9,-17.4,-73.8,-34.8,-59.8,-46.2C-45.9,-57.6,-27.2,-63,-5.7,-68.7C15.8,-74.4,44.1,-69.7,57.6,-58.4Z" transform="translate(100 100)" fill="currentColor"/>
+  </symbol>
+</svg> 

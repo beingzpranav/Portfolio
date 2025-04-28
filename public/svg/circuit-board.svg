@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="800" viewBox="0 0 800 800">
+  <defs>
+    <pattern id="grid" width="80" height="80" patternUnits="userSpaceOnUse">
+      <path d="M 80 0 L 0 0 0 80" fill="none" stroke="#0ea5e9" stroke-width="0.5" stroke-opacity="0.3" />
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#grid)" />
+  
+  <!-- Circuit paths -->
+  <g id="circuit-path-1">
+    <path d="M 40 120 L 200 120 L 200 280 L 360 280 L 360 440 L 520 440 L 520 600 L 680 600" fill="none" stroke="#0ea5e9" stroke-width="2" stroke-opacity="0.4"/>
+    <circle cx="40" cy="120" r="4" fill="#0ea5e9" fill-opacity="0.6"/>
+    <circle cx="200" cy="120" r="4" fill="#0ea5e9" fill-opacity="0.6"/>
+    <circle cx="200" cy="280" r="4" fill="#0ea5e9" fill-opacity="0.6"/>
+    <circle cx="360" cy="280" r="4" fill="#0ea5e9" fill-opacity="0.6"/>
+    <circle cx="360" cy="440" r="4" fill="#0ea5e9" fill-opacity="0.6"/>
+    <circle cx="520" cy="440" r="4" fill="#0ea5e9" fill-opacity="0.6"/>
+    <circle cx="520" cy="600" r="4" fill="#0ea5e9" fill-opacity="0.6"/>
+    <circle cx="680" cy="600" r="4" fill="#0ea5e9" fill-opacity="0.6"/>
+  </g>
+  
+  <g id="circuit-path-2">
+    <path d="M 120 40 L 120 160 L 240 160 L 240 280 L 400 280 L 400 400 L 560 400 L 560 560 L 760 560" fill="none" stroke="#22d3ee" stroke-width="2" stroke-opacity="0.4"/>
+    <circle cx="120" cy="40" r="4" fill="#22d3ee" fill-opacity="0.6"/>
+    <circle cx="120" cy="160" r="4" fill="#22d3ee" fill-opacity="0.6"/>
+    <circle cx="240" cy="160" r="4" fill="#22d3ee" fill-opacity="0.6"/>
+    <circle cx="240" cy="280" r="4" fill="#22d3ee" fill-opacity="0.6"/>
+    <circle cx="400" cy="280" r="4" fill="#22d3ee" fill-opacity="0.6"/>
+    <circle cx="400" cy="400" r="4" fill="#22d3ee" fill-opacity="0.6"/>
+    <circle cx="560" cy="400" r="4" fill="#22d3ee" fill-opacity="0.6"/>
+    <circle cx="560" cy="560" r="4" fill="#22d3ee" fill-opacity="0.6"/>
+    <circle cx="760" cy="560" r="4" fill="#22d3ee" fill-opacity="0.6"/>
+  </g>
+  
+  <g id="circuit-path-3">
+    <path d="M 760 40 L 600 40 L 600 200 L 480 200 L 480 320 L 320 320 L 320 480 L 200 480 L 200 640 L 40 640" fill="none" stroke="#0ea5e9" stroke-width="2" stroke-opacity="0.4"/>
+    <circle cx="760" cy="40" r="4" fill="#0ea5e9" fill-opacity="0.6"/>
+    <circle cx="600" cy="40" r="4" fill="#0ea5e9" fill-opacity="0.6"/>
+    <circle cx="600" cy="200" r="4" fill="#0ea5e9" fill-opacity="0.6"/>
+    <circle cx="480" cy="200" r="4" fill="#0ea5e9" fill-opacity="0.6"/>
+    <circle cx="480" cy="320" r="4" fill="#0ea5e9" fill-opacity="0.6"/>
+    <circle cx="320" cy="320" r="4" fill="#0ea5e9" fill-opacity="0.6"/>
+    <circle cx="320" cy="480" r="4" fill="#0ea5e9" fill-opacity="0.6"/>
+    <circle cx="200" cy="480" r="4" fill="#0ea5e9" fill-opacity="0.6"/>
+    <circle cx="200" cy="640" r="4" fill="#0ea5e9" fill-opacity="0.6"/>
+    <circle cx="40" cy="640" r="4" fill="#0ea5e9" fill-opacity="0.6"/>
+  </g>
+  
+  <g id="circuit-path-4">
+    <path d="M 280 760 L 280 600 L 400 600 L 400 480 L 560 480 L 560 320 L 680 320 L 680 160 L 760 160" fill="none" stroke="#22d3ee" stroke-width="2" stroke-opacity="0.4"/>
+    <circle cx="280" cy="760" r="4" fill="#22d3ee" fill-opacity="0.6"/>
+    <circle cx="280" cy="600" r="4" fill="#22d3ee" fill-opacity="0.6"/>
+    <circle cx="400" cy="600" r="4" fill="#22d3ee" fill-opacity="0.6"/>
+    <circle cx="400" cy="480" r="4" fill="#22d3ee" fill-opacity="0.6"/>
+    <circle cx="560" cy="480" r="4" fill="#22d3ee" fill-opacity="0.6"/>
+    <circle cx="560" cy="320" r="4" fill="#22d3ee" fill-opacity="0.6"/>
+    <circle cx="680" cy="320" r="4" fill="#22d3ee" fill-opacity="0.6"/>
+    <circle cx="680" cy="160" r="4" fill="#22d3ee" fill-opacity="0.6"/>
+    <circle cx="760" cy="160" r="4" fill="#22d3ee" fill-opacity="0.6"/>
+  </g>
+  
+  <!-- Connector points -->
+  <g id="connectors">
+    <circle cx="120" cy="280" r="8" fill="none" stroke="#0ea5e9" stroke-width="1"/>
+    <circle cx="280" cy="440" r="8" fill="none" stroke="#22d3ee" stroke-width="1"/>
+    <circle cx="440" cy="120" r="8" fill="none" stroke="#0ea5e9" stroke-width="1"/>
+    <circle cx="600" cy="360" r="8" fill="none" stroke="#22d3ee" stroke-width="1"/>
+    <circle cx="160" cy="520" r="8" fill="none" stroke="#0ea5e9" stroke-width="1"/>
+    <circle cx="320" cy="680" r="8" fill="none" stroke="#22d3ee" stroke-width="1"/>
+    <circle cx="680" cy="440" r="8" fill="none" stroke="#0ea5e9" stroke-width="1"/>
+  </g>
+  
+  <!-- Chip nodes -->
+  <g id="chip-1">
+    <rect x="230" y="230" width="100" height="60" rx="4" fill="none" stroke="#0ea5e9" stroke-width="1" stroke-opacity="0.8"/>
+    <line x1="200" y1="250" x2="230" y2="250" stroke="#0ea5e9" stroke-width="1" stroke-opacity="0.8"/>
+    <line x1="200" y1="270" x2="230" y2="270" stroke="#0ea5e9" stroke-width="1" stroke-opacity="0.8"/>
+    <line x1="330" y1="250" x2="360" y2="250" stroke="#0ea5e9" stroke-width="1" stroke-opacity="0.8"/>
+    <line x1="330" y1="270" x2="360" y2="270" stroke="#0ea5e9" stroke-width="1" stroke-opacity="0.8"/>
+  </g>
+  
+  <g id="chip-2">
+    <rect x="500" y="500" width="100" height="60" rx="4" fill="none" stroke="#22d3ee" stroke-width="1" stroke-opacity="0.8"/>
+    <line x1="470" y1="520" x2="500" y2="520" stroke="#22d3ee" stroke-width="1" stroke-opacity="0.8"/>
+    <line x1="470" y1="540" x2="500" y2="540" stroke="#22d3ee" stroke-width="1" stroke-opacity="0.8"/>
+    <line x1="600" y1="520" x2="630" y2="520" stroke="#22d3ee" stroke-width="1" stroke-opacity="0.8"/>
+    <line x1="600" y1="540" x2="630" y2="540" stroke="#22d3ee" stroke-width="1" stroke-opacity="0.8"/>
+  </g>
+</svg> 
