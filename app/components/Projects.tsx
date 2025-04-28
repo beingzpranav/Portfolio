@@ -46,7 +46,7 @@ const Projects = () => {
     {
       id: 2,
       title: 'Silver-Jubilee',
-      description: 'A full-stack task management application with user authentication, task categorization, and priority sorting.',
+      description: '"A beautiful celebration website for a 25th wedding anniversary, featuring event details and photo gallery.',
       image: '/projects/silver-jubilee.png',
       tags: ['HTML', 'CSS', 'JavaScript'],
       link: 'https://beingzpranav.github.io/Silver-Jubilee/',
