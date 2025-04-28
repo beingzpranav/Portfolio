@@ -38,7 +38,7 @@ const Projects = () => {
       id: 1,
       title: 'Portfolio Website',
       description: 'A modern portfolio website built with Next.js and Tailwind CSS featuring smooth animations and responsive design.',
-      image: '/projects/portfolio.png',
+      image: '/projects/Portfolio.png',
       tags: ['Next.js', 'TailwindCSS', 'Framer Motion'],
       link: 'https://pranavk.tech',
       github: 'https://github.com/beingzpranav/portfolio'

@@ -1,123 +1,65 @@
-# Modern Portfolio Website
+# Pranav Khandelwal - Portfolio
 
-A modern, responsive portfolio website built with Next.js 13+, TypeScript, and TailwindCSS. Features a sleek design with smooth animations, dark theme, and mobile-first approach.
+A modern, animated portfolio website built with Next.js, TypeScript, and Framer Motion.
 
-![Portfolio Preview](public/preview.png)
+![Portfolio Preview](public/portfolio-preview.png)
 
-## 🌟 Features
+## Features
 
-- **Modern Design**: Clean and professional interface with smooth animations
-- **Responsive**: Mobile-first approach ensuring perfect display on all devices
-- **Dark Theme**: Eye-friendly dark theme with accent colors
-- **Performance Optimized**: Built with Next.js 13+ for optimal performance
-- **Interactive Elements**: Dynamic animations and transitions
-- **SEO Friendly**: Optimized meta tags and semantic HTML
-- **Type Safe**: Built with TypeScript for better development experience
-- **Contact Form**: Integrated email functionality
-- **Project Showcase**: Beautiful project cards with live demos and code links
+### Visual Design
+- **Dark Mode Interface**: Sleek, professional dark theme with accent colors
+- **Animated Components**: Smooth, modern animations using Framer Motion
+- **Responsive Design**: Fully optimized for all devices from mobile to desktop
+- **Modern Loader**: Stylish loading animation for seamless page transitions
+- **Dynamic Code Animations**: Floating code icons and programming syntax animations
 
-## 🚀 Tech Stack
+### Technical Features
+- **Next.js Framework**: Built with Next.js for optimized performance and SEO
+- **TypeScript**: Type-safe code for better development experience
+- **Smooth Scrolling**: Enhanced user experience with smooth scrolling
+- **Optimized Images**: Next.js Image component for optimized image loading
+- **Animated Transitions**: Page transitions and component animations
 
-- **Framework**: Next.js 13+
-- **Language**: TypeScript
-- **Styling**: TailwindCSS
+### Sections
+- **Hero Section**: Animated introduction with developer details
+- **Projects Showcase**: Highlighted projects with descriptions and links
+- **Skills Display**: Visual representation of technical skills and expertise
+- **Interactive Navigation**: Smooth-scrolling navigation with hover effects
+
+## Technology Stack
+
+- **Frontend**: Next.js, TypeScript, React
+- **Styling**: Tailwind CSS
 - **Animations**: Framer Motion
-- **Icons**: Custom SVG components
-- **Email**: Nodemailer
-- **Deployment**: Vercel
-- **Version Control**: Git
+- **Deployment**: Vercel/Netlify
 
-## 📦 Installation
+## Development
 
-1. Clone the repository:
+To run this project locally:
+
 ```bash
-git clone https://github.com/yourusername/portfolio-site.git
-```
-
-2. Install dependencies:
-```bash
-cd portfolio-site
+# Install dependencies
 npm install
-```
 
-3. Create a `.env.local` file in the root directory:
-```env
-EMAIL_USER=your.email@gmail.com
-EMAIL_PASS=your_app_password_here
-```
-
-4. Run the development server:
-```bash
+# Run the development server
 npm run dev
 ```
 
-5. Open [http://localhost:3000](http://localhost:3000) in your browser
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-## 🛠️ Project Structure
+## Design Philosophy
 
-```
-portfolio-site/
-├── app/                    # Next.js 13+ app directory
-│   ├── components/        # React components
-│   ├── api/              # API routes
-│   ├── layout.tsx        # Root layout
-│   └── page.tsx          # Home page
-├── public/               # Static assets
-├── styles/              # Global styles and CSS modules
-├── types/               # TypeScript type definitions
-└── package.json         # Project dependencies
-```
+This portfolio showcases modern web development techniques with a focus on:
+- **Performance**: Fast loading and rendering
+- **Animation**: Tasteful, purposeful animations that enhance UX
+- **Typography**: Clear hierarchy and readable text
+- **Interactivity**: Responsive interactions that engage users
+- **Code Quality**: Clean, well-structured TypeScript code
 
-## 📱 Components
+## Contact
 
-- **Hero**: Dynamic landing section with animated text
-- **Projects**: Showcase of featured projects
-- **Skills**: Technical skills and expertise
-- **Contact**: Email contact form
-- **Navbar**: Responsive navigation
-- **Footer**: Site footer with social links
-
-## 🎨 Customization
-
-1. **Personal Information**: Update your information in `app/page.tsx`
-2. **Projects**: Modify project data in `components/Projects.tsx`
-3. **Skills**: Update skills in `components/Skills.tsx`
-4. **Styling**: Customize colors in `tailwind.config.js`
-5. **Content**: Modify text content in respective components
-
-## 📧 Contact Form Setup
-
-1. Enable 2FA in your Gmail account
-2. Generate an App Password
-3. Update `.env.local` with your credentials
-4. Test the contact form functionality
-
-## 🚀 Deployment
-
-1. Create a Vercel account
-2. Connect your GitHub repository
-3. Configure environment variables
-4. Deploy with one click
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## 📞 Support
-
-For support, email contact@pranavk.tech or open an issue in the repository.
-
-## 🙏 Acknowledgments
-
-- Next.js team for the amazing framework
-- Vercel for hosting
-- TailwindCSS for styling utilities
-- Framer Motion for animations
+For any inquiries, please reach out via email or connect through LinkedIn.
 
 ---
 
-Made with ❤️ by [Pranav Khandelwal](https://pranavk.tech) 
+© 2023 Pranav Khandelwal. All Rights Reserved. 

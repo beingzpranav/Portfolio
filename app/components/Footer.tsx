@@ -100,7 +100,7 @@ const Footer = () => {
                   key={social.name}
                   variants={childVariants}
                   custom={index}
-                  whileHover={{ x: 2 }}
+                  whileHover={{ x: 5 }}
                   transition={{ type: "spring", stiffness: 400, damping: 10 }}
                 >
                   <a 

@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence, Variants } from 'framer-motion';
+import Image from 'next/image';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -101,10 +102,16 @@ const Navbar = () => {
             <motion.div
               animate={{ rotate: [0, 5, -5, 0] }}
               transition={{ repeat: Infinity, duration: 6 }}
-              className="w-8 h-8 mr-2 bg-primary rounded-sm flex items-center justify-center text-white"
-              whileHover={{ backgroundColor: "#0EA5E9" }}
+              className="w-8 h-8 mr-2 flex items-center justify-center text-white"
+              whileHover={{ scale: 1.1 }}
             >
-              PK
+              <Image 
+                src="/logo.svg" 
+                alt="Logo" 
+                width={24} 
+                height={24} 
+                className="w-6 h-6"
+              />
             </motion.div>
             <span className="text-primary">Pranav</span>
           </motion.span>

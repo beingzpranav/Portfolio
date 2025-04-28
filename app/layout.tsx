@@ -13,6 +13,10 @@ export const metadata: Metadata = {
   description: 'Portfolio showcasing my web development and design projects',
   keywords: 'web developer, designer, portfolio, frontend',
   viewport: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0',
+  icons: {
+    icon: '/logo.svg',
+    apple: '/logo.svg',
+  },
 };
 
 export default function RootLayout({
@@ -25,6 +29,7 @@ export default function RootLayout({
       <head>
         <meta name="theme-color" content="#030712" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
+        <link rel="icon" href="/logo.svg" type="image/svg+xml" />
       </head>
       <body className={`${inter.className} motion-code overflow-x-hidden`}>
         {/* Modern Loader */}
