@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import Image from "next/image";
+
 
 // Define types for skills data
 type Skill = {
@@ -165,14 +165,7 @@ const Skills = () => {
             variants={itemVariants}
           >
             <div className="flex items-center justify-center mb-4">
-              <Image 
-                src="/logo.svg" 
-                alt="Logo" 
-                width={40} 
-                height={40} 
-                className="mr-2"
-              />
-            </div>
+             
             My Skills
             <motion.span 
               className="absolute -bottom-2 left-0 w-full h-1 bg-primary"
