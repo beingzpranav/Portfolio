@@ -1,7 +1,19 @@
 .wrapper {
   position: relative;
-  min-height: 100vh;
-  width: 100%;
+  min-height: 100vh; /* Fallback */
+  min-height: calc(var(--vh, 1vh) * 100);
+  width: 100vw;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+/* Fix for iOS 100vh issue */
+@supports (-webkit-touch-callout: none) {
+  .wrapper {
+    min-height: -webkit-fill-available;
+  }
 }
 
 .loader-container {
@@ -13,7 +25,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #030712;
+  background-color: #020617;
   z-index: 9999;
   opacity: 1;
   transition: opacity 0.5s ease-in-out;
@@ -27,8 +39,19 @@
 .content {
   position: relative;
   width: 100%;
-  min-height: 100vh;
+  min-height: 100vh; /* Fallback */
+  min-height: calc(var(--vh, 1vh) * 100);
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
   transition: opacity 0.5s ease-in-out;
+}
+
+/* Fix for iOS 100vh issue */
+@supports (-webkit-touch-callout: none) {
+  .content {
+    min-height: -webkit-fill-available;
+  }
 }
 
 .content.hidden {

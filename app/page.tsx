@@ -10,7 +10,7 @@ import PageClient from './components/PageClient';
 export default function Home() {
   return (
     <PageClient>
-      <main className="relative">
+      <main className="relative min-h-screen w-screen max-w-[100%] flex flex-col bg-gradient-to-b from-[#020617] to-[#0f172a] overflow-hidden">
         <Navbar />
         <Hero />
         <Projects />

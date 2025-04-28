@@ -4,12 +4,40 @@ import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { TypeAnimation } from 'react-type-animation';
+import { motion } from 'framer-motion';
 import '../../styles/hero.css';
 
 const Hero = () => {
   const [loaded, setLoaded] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isMobile, setIsMobile] = useState(false);
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        delayChildren: 0.3,
+        staggerChildren: 0.2
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: { duration: 0.6, ease: [0.6, 0.05, 0.01, 0.9] }
+    }
+  };
+
+  const codeElements = [
+    { id: 1, left: '5%', top: '20%', rotation: -15, delay: 0 },
+    { id: 2, right: '10%', top: '15%', rotation: 12, delay: 0.5 },
+    { id: 3, left: '15%', bottom: '15%', rotation: 5, delay: 1 },
+    { id: 4, right: '20%', bottom: '25%', rotation: -8, delay: 1.5 },
+  ];
 
   useEffect(() => {
     // Trigger animations after component mounts
@@ -77,9 +105,59 @@ const Hero = () => {
               </p>
               
               {/* Name */}
-              <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-3 md:mb-4 glow-text hero-name">
-                <span className="gradient-text">Pranav Khandelwal</span>
-              </h1>
+              <motion.h1 
+                variants={itemVariants} 
+                className="text-3xl md:text-5xl lg:text-6xl font-bold mb-3 md:mb-4 glow-text hero-name"
+              >
+                <motion.span 
+                  className="inline-block"
+                  animate={{ y: [0, -3, 0] }}
+                  transition={{ duration: 1.5, repeat: Infinity, repeatType: "reverse", delay: 0 }}
+                >P</motion.span>
+                <motion.span 
+                  className="inline-block"
+                  animate={{ y: [0, -3, 0] }}
+                  transition={{ duration: 1.5, repeat: Infinity, repeatType: "reverse", delay: 0.1 }}
+                >r</motion.span>
+                <motion.span 
+                  className="inline-block"
+                  animate={{ y: [0, -3, 0] }}
+                  transition={{ duration: 1.5, repeat: Infinity, repeatType: "reverse", delay: 0.2 }}
+                >a</motion.span>
+                <motion.span 
+                  className="inline-block"
+                  animate={{ y: [0, -3, 0] }}
+                  transition={{ duration: 1.5, repeat: Infinity, repeatType: "reverse", delay: 0.3 }}
+                >n</motion.span>
+                <motion.span 
+                  className="inline-block"
+                  animate={{ y: [0, -3, 0] }}
+                  transition={{ duration: 1.5, repeat: Infinity, repeatType: "reverse", delay: 0.4 }}
+                >a</motion.span>
+                <motion.span 
+                  className="inline-block"
+                  animate={{ y: [0, -3, 0] }}
+                  transition={{ duration: 1.5, repeat: Infinity, repeatType: "reverse", delay: 0.5 }}
+                >v</motion.span>
+                &nbsp;
+                <motion.span 
+                  className="inline-block text-primary glow-text"
+                  animate={{ 
+                    y: [0, -3, 0],
+                    textShadow: [
+                      "0 0 8px rgba(14, 165, 233, 0.6)", 
+                      "0 0 16px rgba(14, 165, 233, 0.8)", 
+                      "0 0 8px rgba(14, 165, 233, 0.6)"
+                    ]
+                  }}
+                  transition={{ 
+                    y: { duration: 1.5, repeat: Infinity, repeatType: "reverse", delay: 0.6 },
+                    textShadow: { duration: 3, repeat: Infinity }
+                  }}
+                >
+                 Khandelwal
+                </motion.span>
+              </motion.h1>
               
               {/* Role */}
               <div className="text-xl md:text-3xl lg:text-4xl text-gray-400 mb-4 md:mb-6 min-h-[32px] md:min-h-[56px]">
@@ -87,8 +165,8 @@ const Hero = () => {
                   sequence={[
                     'Web Developer',
                     2000,
-                    'Frontend Developer',
-                    2000,
+                    // 'Frontend Developer',
+                    // 2000,
                     'React Developer',
                     2000,
                     'UI/UX Enthusiast',
@@ -138,10 +216,10 @@ const Hero = () => {
               {/* Image container */}
               <div className="absolute inset-2 overflow-hidden rounded-full border-2 border-white/20">
                 <Image
-                  src="/Profile.jpg"
+                  src="/profile.png"
                   alt="Profile Photo"
-                  width={400}
-                  height={400}
+                  width={500}
+                  height={500}
                   className="object-cover w-full h-full"
                   priority
                   style={{ objectFit: 'cover', objectPosition: 'center center' }}
@@ -161,9 +239,6 @@ const Hero = () => {
         {/* Scroll down indicator */}
         <div className="absolute bottom-8 md:bottom-10 left-1/2 transform -translate-x-1/2">
           <div className={`scroll-indicator ${loaded ? 'visible' : ''}`}>
-            <div className="mouse">
-              <div className="wheel"></div>
-            </div>
             <div className="arrow-container">
               <div className="arrow"></div>
             </div>
@@ -341,40 +416,7 @@ const Hero = () => {
           mask-image: linear-gradient(to right, transparent, white 10%, white 90%, transparent);
         }
         
-        .mouse {
-          width: 24px;
-          height: 40px;
-          border: 2px solid rgba(255, 255, 255, 0.3);
-          border-radius: 12px;
-          margin: 0 auto;
-          position: relative;
-        }
-        
-        .wheel {
-          width: 4px;
-          height: 8px;
-          background: #0ea5e9;
-          border-radius: 2px;
-          position: absolute;
-          top: 6px;
-          left: 50%;
-          transform: translateX(-50%);
-          animation: scroll 2s infinite;
-        }
-        
-        @keyframes scroll {
-          0% { 
-            opacity: 1;
-            transform: translateX(-50%) translateY(0);
-          }
-          100% { 
-            opacity: 0;
-            transform: translateX(-50%) translateY(18px);
-          }
-        }
-        
         .arrow-container {
-          margin-top: 8px;
           height: 10px;
           text-align: center;
         }

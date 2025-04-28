@@ -3,12 +3,18 @@
 @tailwind utilities;
 
 @layer base {
-  body {
+  html, body {
     @apply bg-dark text-white font-sans;
     background: linear-gradient(to bottom, #020617, #0f172a);
     background-attachment: fixed;
     position: relative;
     overflow-x: hidden;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
   }
   
   body::before {
@@ -25,6 +31,21 @@
     background-size: 100px 100px;
     opacity: 0.4;
     pointer-events: none;
+  }
+  
+  /* Fix for iOS 100vh issue */
+  @supports (-webkit-touch-callout: none) {
+    .min-h-screen {
+      min-height: -webkit-fill-available;
+    }
+  }
+  
+  #__next, main {
+    min-height: 100vh;
+    width: 100vw;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
   }
   
   h1, h2, h3, h4, h5, h6 {
@@ -61,6 +82,12 @@
     @apply bg-secondary backdrop-blur-sm rounded-xl p-6 shadow-lg border border-gray-800;
     position: relative;
     overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px -5px rgba(14, 165, 233, 0.25);
   }
   
   .card::after {
@@ -82,6 +109,7 @@
   .section {
     @apply py-16 md:py-24;
     position: relative;
+    transition: all 0.5s ease-out;
   }
   
   .tech-icon {
@@ -90,6 +118,7 @@
   
   .nav-link {
     @apply relative px-1 py-2;
+    transition: all 0.3s ease;
   }
   
   .nav-link::after {
@@ -98,6 +127,15 @@
   
   .nav-link:hover::after {
     @apply w-full;
+  }
+  
+  /* Interactive elements */
+  button, a, .interactive {
+    transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  
+  button:active, a:active, .interactive:active {
+    transform: scale(0.97);
   }
 }
 
@@ -124,10 +162,20 @@
 /* Glow effect */
 .glow {
   box-shadow: 0 0 15px rgba(14, 165, 233, 0.3);
+  transition: box-shadow 0.3s ease;
+}
+
+.glow:hover {
+  box-shadow: 0 0 25px rgba(14, 165, 233, 0.5);
 }
 
 .glow-text {
   text-shadow: 0 0 10px rgba(14, 165, 233, 0.5);
+  transition: text-shadow 0.3s ease;
+}
+
+.glow-text:hover {
+  text-shadow: 0 0 15px rgba(14, 165, 233, 0.7);
 }
 
 /* Custom scrollbar */
@@ -141,13 +189,73 @@
 
 ::-webkit-scrollbar-thumb {
   @apply bg-primary rounded-full;
+  transition: background-color 0.3s ease;
 }
 
 ::-webkit-scrollbar-thumb:hover {
   @apply bg-accent;
 }
 
-/* Animations */
+/* Entrance animations */
+.fade-in-up {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.fade-in {
+  animation: fadeIn 0.6s ease forwards;
+}
+
+.fade-in-left {
+  animation: fadeInLeft 0.6s ease forwards;
+}
+
+.fade-in-right {
+  animation: fadeInRight 0.6s ease forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Default animations */
 @keyframes float {
   0%, 100% {
     transform: translateY(0);
@@ -210,4 +318,43 @@
   100% {
     transform: translate(0, 0) scale(1);
   }
+}
+
+/* Hover animations */
+.hover-lift {
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+}
+
+/* Staggered animation delay classes */
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+.delay-500 { animation-delay: 500ms; }
+
+/* Animate on scroll styles - requires JS implementation to activate */
+.aos-animate {
+  opacity: 0;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.aos-animate.fade-up {
+  transform: translateY(20px);
+}
+
+.aos-animate.fade-left {
+  transform: translateX(-20px);
+}
+
+.aos-animate.fade-right {
+  transform: translateX(20px);
+}
+
+.aos-animate.active {
+  opacity: 1;
+  transform: translate(0);
 } 
