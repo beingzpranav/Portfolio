@@ -216,7 +216,7 @@ const Hero = () => {
               {/* Image container */}
               <div className="absolute inset-2 overflow-hidden rounded-full border-2 border-white/20">
                 <Image
-                  src="/profile.png"
+                  src="/Profile.png"
                   alt="Profile Photo"
                   width={500}
                   height={500}
