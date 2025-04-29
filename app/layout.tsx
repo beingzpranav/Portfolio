@@ -5,6 +5,7 @@ import React from 'react';
 import AnimatedCodeIcons from './components/AnimatedCodeIcons';
 import ModernLoader from './components/ModernLoader';
 import '../styles/layout.css';
+import { Analytics } from "@vercel/analytics/react"
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -62,6 +63,7 @@ export default function RootLayout({
         <div className="relative z-10">
           {children}
         </div>
+        <Analytics />
       </body>
     </html>
   );
