@@ -25,10 +25,9 @@ This repository contains the source code for my personal portfolio website. The 
 
 ## 🛠️ Technologies Used
 
-- Frontend Framework: [Your framework here, e.g., React, Next.js, etc.]
-- Styling: [CSS/SCSS/Tailwind/etc.]
-- Deployment: [Hosting platform]
-- Additional Tools: [Any other notable tools or libraries]
+- Frontend Framework: React, Next.js
+- Styling: Tailwind CSS
+- Deployment: Vercel
 
 ## 🏗️ Project Structure
 
