@@ -59,15 +59,34 @@ const Contact = () => {
     
     setIsSubmitting(true);
     
-    // Simulate API call
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setIsSuccess(true);
-      setFormState({ name: '', email: '', message: '' });
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formState),
+      });
       
-      // Reset success message after 5 seconds
-      setTimeout(() => setIsSuccess(false), 5000);
-    }, 2000);
+      if (response.ok) {
+        setIsSuccess(true);
+        setFormState({ name: '', email: '', message: '' });
+        
+        // Reset success message after 5 seconds
+        setTimeout(() => setIsSuccess(false), 5000);
+      } else {
+        const error = await response.json();
+        console.error('Error submitting form:', error);
+        setIsError(true);
+        setTimeout(() => setIsError(false), 3000);
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setIsError(true);
+      setTimeout(() => setIsError(false), 3000);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -158,7 +177,9 @@ const Contact = () => {
                   <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
-                  <span>Please fill out all fields.</span>
+                  <span>{formState.name && formState.email && formState.message ? 
+                    "Failed to send message. Please try again or contact directly via email." : 
+                    "Please fill out all fields."}</span>
                 </motion.div>
               )}
             </AnimatePresence>

@@ -207,7 +207,7 @@ const Hero = () => {
               <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center md:justify-start">
                 <Link href="#projects" className="btn btn-primary relative overflow-hidden group enhanced-btn text-sm md:text-base">
                   <span className="relative z-10">View Projects</span>
-                  <span className="absolute bottom-0 left-0 w-0 h-full bg-accent group-hover:w-full transition-all duration-300 -z-1"></span>
+                  <span className="absolute bottom-0 left-0 w-0 h-full bg-accent/80 group-hover:w-full transition-all duration-300 -z-1"></span>
                 </Link>
                 <Link href="#contact" className="btn btn-outline hover-glow text-sm md:text-base">Contact Me</Link>
               </div>

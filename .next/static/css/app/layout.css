@@ -683,7 +683,14 @@ video {
 .btn-primary:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(34 211 238 / var(--tw-bg-opacity, 1));
+  font-weight: 600;
 }
+.btn-primary {
+    text-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
+  }
+.btn-primary:hover {
+    text-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+  }
 .section {
   padding-top: 4rem;
   padding-bottom: 4rem;
@@ -1123,6 +1130,9 @@ button:active, a:active, .interactive:active {
 .justify-items-center {
   justify-items: center;
 }
+.gap-1 {
+  gap: 0.25rem;
+}
 .gap-2 {
   gap: 0.5rem;
 }
@@ -1137,9 +1147,6 @@ button:active, a:active, .interactive:active {
 }
 .gap-8 {
   gap: 2rem;
-}
-.gap-1 {
-  gap: 0.25rem;
 }
 .space-x-2 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
@@ -1258,13 +1265,15 @@ button:active, a:active, .interactive:active {
   --tw-bg-opacity: 1;
   background-color: rgb(15 23 42 / var(--tw-bg-opacity, 1));
 }
+.bg-\[\#0F172A\]\/80 {
+  background-color: rgb(15 23 42 / 0.8);
+}
 .bg-\[\#1E293B\] {
   --tw-bg-opacity: 1;
   background-color: rgb(30 41 59 / var(--tw-bg-opacity, 1));
 }
-.bg-accent {
-  --tw-bg-opacity: 1;
-  background-color: rgb(34 211 238 / var(--tw-bg-opacity, 1));
+.bg-accent\/80 {
+  background-color: rgb(34 211 238 / 0.8);
 }
 .bg-dark {
   --tw-bg-opacity: 1;
@@ -1301,17 +1310,14 @@ button:active, a:active, .interactive:active {
 .bg-secondary\/30 {
   background-color: rgb(15 23 42 / 0.3);
 }
+.bg-secondary\/70 {
+  background-color: rgb(15 23 42 / 0.7);
+}
 .bg-secondary\/95 {
   background-color: rgb(15 23 42 / 0.95);
 }
 .bg-transparent {
   background-color: transparent;
-}
-.bg-secondary\/70 {
-  background-color: rgb(15 23 42 / 0.7);
-}
-.bg-\[\#0F172A\]\/80 {
-  background-color: rgb(15 23 42 / 0.8);
 }
 .bg-gradient-to-b {
   background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
@@ -1345,14 +1351,14 @@ button:active, a:active, .interactive:active {
 .p-2 {
   padding: 0.5rem;
 }
+.p-3 {
+  padding: 0.75rem;
+}
 .p-4 {
   padding: 1rem;
 }
 .p-6 {
   padding: 1.5rem;
-}
-.p-3 {
-  padding: 0.75rem;
 }
 .px-2 {
   padding-left: 0.5rem;
@@ -1481,11 +1487,11 @@ button:active, a:active, .interactive:active {
 .text-white\/70 {
   color: rgb(255 255 255 / 0.7);
 }
-.text-white\/90 {
-  color: rgb(255 255 255 / 0.9);
-}
 .text-white\/80 {
   color: rgb(255 255 255 / 0.8);
+}
+.text-white\/90 {
+  color: rgb(255 255 255 / 0.9);
 }
 .opacity-0 {
   opacity: 0;
@@ -1493,11 +1499,11 @@ button:active, a:active, .interactive:active {
 .opacity-25 {
   opacity: 0.25;
 }
-.opacity-75 {
-  opacity: 0.75;
-}
 .opacity-70 {
   opacity: 0.7;
+}
+.opacity-75 {
+  opacity: 0.75;
 }
 .shadow-md {
   --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
@@ -1829,13 +1835,13 @@ button:active, a:active, .interactive:active {
   background-color: rgb(14 165 233 / 0.9);
 }
 
-.hover\:bg-primary\/90:hover {
-  background-color: rgb(14 165 233 / 0.9);
-}
-
 .hover\:bg-primary:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(14 165 233 / var(--tw-bg-opacity, 1));
+}
+
+.hover\:bg-primary\/90:hover {
+  background-color: rgb(14 165 233 / 0.9);
 }
 
 .hover\:text-\[\#0EA5E9\]:hover {
