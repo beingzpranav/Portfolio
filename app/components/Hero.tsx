@@ -17,8 +17,8 @@ const Hero = () => {
     visible: {
       opacity: 1,
       transition: {
-        delayChildren: 0.3,
-        staggerChildren: 0.2
+        delayChildren: isMobile ? 0.2 : 0.3,
+        staggerChildren: isMobile ? 0.15 : 0.2
       }
     }
   };
@@ -28,7 +28,10 @@ const Hero = () => {
     visible: {
       y: 0,
       opacity: 1,
-      transition: { duration: 0.6, ease: [0.6, 0.05, 0.01, 0.9] }
+      transition: { 
+        duration: isMobile ? 0.4 : 0.6, 
+        ease: [0.6, 0.05, 0.01, 0.9] 
+      }
     }
   };
 
@@ -54,7 +57,14 @@ const Hero = () => {
     // Add mouse move tracking for spotlight effect (desktop only)
     const handleMouseMove = (e: MouseEvent) => {
       if (!isMobile) {
-        setMousePosition({ x: e.clientX, y: e.clientY });
+        // Throttle mousemove updates for better performance
+        if (!window.requestAnimationFrame) {
+          setMousePosition({ x: e.clientX, y: e.clientY });
+        } else {
+          requestAnimationFrame(() => {
+            setMousePosition({ x: e.clientX, y: e.clientY });
+          });
+        }
       }
     };
     
@@ -109,54 +119,61 @@ const Hero = () => {
                 variants={itemVariants} 
                 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-3 md:mb-4 glow-text hero-name"
               >
-                <motion.span 
-                  className="inline-block"
-                  animate={{ y: [0, -3, 0] }}
-                  transition={{ duration: 1.5, repeat: Infinity, repeatType: "reverse", delay: 0 }}
-                >P</motion.span>
-                <motion.span 
-                  className="inline-block"
-                  animate={{ y: [0, -3, 0] }}
-                  transition={{ duration: 1.5, repeat: Infinity, repeatType: "reverse", delay: 0.1 }}
-                >r</motion.span>
-                <motion.span 
-                  className="inline-block"
-                  animate={{ y: [0, -3, 0] }}
-                  transition={{ duration: 1.5, repeat: Infinity, repeatType: "reverse", delay: 0.2 }}
-                >a</motion.span>
-                <motion.span 
-                  className="inline-block"
-                  animate={{ y: [0, -3, 0] }}
-                  transition={{ duration: 1.5, repeat: Infinity, repeatType: "reverse", delay: 0.3 }}
-                >n</motion.span>
-                <motion.span 
-                  className="inline-block"
-                  animate={{ y: [0, -3, 0] }}
-                  transition={{ duration: 1.5, repeat: Infinity, repeatType: "reverse", delay: 0.4 }}
-                >a</motion.span>
-                <motion.span 
-                  className="inline-block"
-                  animate={{ y: [0, -3, 0] }}
-                  transition={{ duration: 1.5, repeat: Infinity, repeatType: "reverse", delay: 0.5 }}
-                >v</motion.span>
-                &nbsp;
-                <motion.span 
-                  className="inline-block text-primary glow-text"
-                  animate={{ 
-                    y: [0, -3, 0],
-                    textShadow: [
-                      "0 0 8px rgba(14, 165, 233, 0.6)", 
-                      "0 0 16px rgba(14, 165, 233, 0.8)", 
-                      "0 0 8px rgba(14, 165, 233, 0.6)"
-                    ]
-                  }}
-                  transition={{ 
-                    y: { duration: 1.5, repeat: Infinity, repeatType: "reverse", delay: 0.6 },
-                    textShadow: { duration: 3, repeat: Infinity }
-                  }}
-                >
-                 Khandelwal
-                </motion.span>
+                {!isMobile ? (
+                  <>
+                    <motion.span 
+                      className="inline-block"
+                      animate={{ y: [0, -3, 0] }}
+                      transition={{ duration: 1.5, repeat: Infinity, repeatType: "reverse", delay: 0 }}
+                    >P</motion.span>
+                    <motion.span 
+                      className="inline-block"
+                      animate={{ y: [0, -3, 0] }}
+                      transition={{ duration: 1.5, repeat: Infinity, repeatType: "reverse", delay: 0.1 }}
+                    >r</motion.span>
+                    <motion.span 
+                      className="inline-block"
+                      animate={{ y: [0, -3, 0] }}
+                      transition={{ duration: 1.5, repeat: Infinity, repeatType: "reverse", delay: 0.2 }}
+                    >a</motion.span>
+                    <motion.span 
+                      className="inline-block"
+                      animate={{ y: [0, -3, 0] }}
+                      transition={{ duration: 1.5, repeat: Infinity, repeatType: "reverse", delay: 0.3 }}
+                    >n</motion.span>
+                    <motion.span 
+                      className="inline-block"
+                      animate={{ y: [0, -3, 0] }}
+                      transition={{ duration: 1.5, repeat: Infinity, repeatType: "reverse", delay: 0.4 }}
+                    >a</motion.span>
+                    <motion.span 
+                      className="inline-block"
+                      animate={{ y: [0, -3, 0] }}
+                      transition={{ duration: 1.5, repeat: Infinity, repeatType: "reverse", delay: 0.5 }}
+                    >v</motion.span>
+                    &nbsp;
+                    <motion.span 
+                      className="inline-block text-primary glow-text"
+                      animate={{ 
+                        y: [0, -3, 0],
+                        textShadow: [
+                          "0 0 8px rgba(14, 165, 233, 0.6)", 
+                          "0 0 16px rgba(14, 165, 233, 0.8)", 
+                          "0 0 8px rgba(14, 165, 233, 0.6)"
+                        ]
+                      }}
+                      transition={{ 
+                        y: { duration: 1.5, repeat: Infinity, repeatType: "reverse", delay: 0.6 },
+                        textShadow: { duration: 3, repeat: Infinity }
+                      }}
+                    >
+                     Khandelwal
+                    </motion.span>
+                  </>
+                ) : (
+                  // Simplified animation for mobile
+                  <span>Pranav <span className="text-primary glow-text">Khandelwal</span></span>
+                )}
               </motion.h1>
               
               {/* Role */}
