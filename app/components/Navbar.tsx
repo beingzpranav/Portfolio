@@ -102,7 +102,7 @@ const Navbar = () => {
             <motion.div
               animate={{ rotate: [0, 5, -5, 0] }}
               transition={{ repeat: Infinity, duration: 6 }}
-              className="w-8 h-8 mr-2 flex items-center justify-center text-white"
+              className="w-8 h-8 mr-2 hidden md:flex items-center justify-center text-white"
               whileHover={{ scale: 1.1 }}
             >
               <Image 

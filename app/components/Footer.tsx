@@ -6,7 +6,7 @@ import { useState, useEffect } from 'react';
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   const [hovered, setHovered] = useState<number | null>(null);
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(true); // Default to true for initial server render
   
   const footerVariants = {
     hidden: { opacity: 0, y: 20 },
@@ -33,10 +33,9 @@ const Footer = () => {
   // Check if device is mobile for reducing animations
   useEffect(() => {
     const checkMobile = () => {
-      const isMobile = window.innerWidth < 768;
+      setIsMobile(window.innerWidth < 768);
       // Apply reduced motion on mobile
-      document.documentElement.style.setProperty('--reduce-motion', isMobile ? '1' : '0');
-      setIsMobile(isMobile);
+      document.documentElement.style.setProperty('--reduce-motion', window.innerWidth < 768 ? '1' : '0');
     };
     
     checkMobile();

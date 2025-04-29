@@ -1,6 +1,7 @@
 import '../styles/globals.css';
 import { Inter } from 'next/font/google';
 import type { Metadata } from 'next';
+import { Viewport } from 'next';
 import React from 'react';
 import AnimatedCodeIcons from './components/AnimatedCodeIcons';
 import ModernLoader from './components/ModernLoader';
@@ -13,11 +14,17 @@ export const metadata: Metadata = {
   title: 'Pranav Khandelwal - Web Developer & Designer',
   description: 'Portfolio showcasing my web development and design projects',
   keywords: 'web developer, designer, portfolio, frontend',
-  viewport: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0',
   icons: {
     icon: '/logo.svg',
     apple: '/logo.svg',
   },
+};
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
 };
 
 export default function RootLayout({
