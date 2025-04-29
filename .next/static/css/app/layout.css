@@ -887,6 +887,9 @@ button:active, a:active, .interactive:active {
 .col-span-full {
   grid-column: 1 / -1;
 }
+.col-span-2 {
+  grid-column: span 2 / span 2;
+}
 .m-auto {
   margin: auto;
 }
@@ -1115,6 +1118,9 @@ button:active, a:active, .interactive:active {
 .grid-cols-1 {
   grid-template-columns: repeat(1, minmax(0, 1fr));
 }
+.grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
 .flex-col {
   flex-direction: column;
 }
@@ -1167,6 +1173,11 @@ button:active, a:active, .interactive:active {
   --tw-space-y-reverse: 0;
   margin-top: calc(1.25rem * calc(1 - var(--tw-space-y-reverse)));
   margin-bottom: calc(1.25rem * var(--tw-space-y-reverse));
+}
+.space-y-2 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0;
+  margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
+  margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
 }
 .overflow-hidden {
   overflow: hidden;
@@ -1905,6 +1916,14 @@ button:active, a:active, .interactive:active {
     display: inline;
   }
 
+  .sm\:h-5 {
+    height: 1.25rem;
+  }
+
+  .sm\:w-5 {
+    width: 1.25rem;
+  }
+
   .sm\:flex-row {
     flex-direction: row;
   }
@@ -1912,6 +1931,16 @@ button:active, a:active, .interactive:active {
   .sm\:px-6 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
+  }
+
+  .sm\:text-base {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .sm\:text-sm {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
   }
 }
 
@@ -2050,6 +2079,12 @@ button:active, a:active, .interactive:active {
     gap: 1rem;
   }
 
+  .md\:space-y-3 > :not([hidden]) ~ :not([hidden]) {
+    --tw-space-y-reverse: 0;
+    margin-top: calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));
+    margin-bottom: calc(0.75rem * var(--tw-space-y-reverse));
+  }
+
   .md\:p-8 {
     padding: 2rem;
   }
@@ -2116,6 +2151,10 @@ button:active, a:active, .interactive:active {
   .lg\:mx-0 {
     margin-left: 0px;
     margin-right: 0px;
+  }
+
+  .lg\:mt-0 {
+    margin-top: 0px;
   }
 
   .lg\:h-80 {
