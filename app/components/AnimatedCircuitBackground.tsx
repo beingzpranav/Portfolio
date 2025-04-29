@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 interface AnimatedCircuitBackgroundProps {
   opacity?: number;
@@ -15,6 +15,7 @@ const AnimatedCircuitBackground: React.FC<AnimatedCircuitBackgroundProps> = ({
 }) => {
   const svgRef = useRef<HTMLObjectElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+  const [svgLoaded, setSvgLoaded] = useState(false);
   
   // Get animation duration multiplier based on speed
   const getSpeedMultiplier = (): number => {
@@ -26,111 +27,121 @@ const AnimatedCircuitBackground: React.FC<AnimatedCircuitBackgroundProps> = ({
   };
   
   useEffect(() => {
-    // Simple approach that doesn't rely on Web Animation API which might be causing issues
-    const checkSvgLoaded = () => {
-      const svgDoc = svgRef.current?.contentDocument;
-      if (!svgDoc) {
-        // If SVG not loaded yet, retry after a short delay
-        setTimeout(checkSvgLoaded, 100);
-        return;
+    if (!svgRef.current) return;
+    
+    const handleSvgLoad = () => {
+      setSvgLoaded(true);
+    };
+    
+    svgRef.current.addEventListener('load', handleSvgLoad);
+    
+    return () => {
+      if (svgRef.current) {
+        svgRef.current.removeEventListener('load', handleSvgLoad);
+      }
+    };
+  }, []);
+  
+  useEffect(() => {
+    if (!svgLoaded || !svgRef.current) return;
+    
+    const svgDoc = svgRef.current.contentDocument;
+    if (!svgDoc || !svgDoc.head) return;
+    
+    const styleElement = document.createElement('style');
+    const speedMultiplier = getSpeedMultiplier();
+    
+    styleElement.textContent = `
+      @keyframes drawLine {
+        from { stroke-dashoffset: 1000; }
+        to { stroke-dashoffset: 0; }
       }
       
-      // Add CSS animations instead of using the Web Animation API
-      const styleElement = document.createElement('style');
-      const speedMultiplier = getSpeedMultiplier();
+      @keyframes pulsate {
+        0% { opacity: 0.2; r: 2; }
+        50% { opacity: 0.8; r: 4; }
+        100% { opacity: 0.2; r: 2; }
+      }
       
-      styleElement.textContent = `
-        @keyframes drawLine {
-          from { stroke-dashoffset: 1000; }
-          to { stroke-dashoffset: 0; }
-        }
-        
-        @keyframes pulsate {
-          0% { opacity: 0.2; r: 2; }
-          50% { opacity: 0.8; r: 4; }
-          100% { opacity: 0.2; r: 2; }
-        }
-        
-        @keyframes glowConnector {
-          0% { opacity: 0.2; stroke-width: 1; }
-          50% { opacity: 0.8; stroke-width: 2; }
-          100% { opacity: 0.2; stroke-width: 1; }
-        }
-        
-        @keyframes fadeInOut {
-          0% { opacity: 0.5; }
-          50% { opacity: 1; }
-          100% { opacity: 0.5; }
-        }
-        
-        @keyframes floatUp {
-          0% { transform: translateY(0); opacity: 0.6; }
-          50% { transform: translateY(-15px); opacity: 1; }
-          100% { transform: translateY(0); opacity: 0.6; }
-        }
-        
-        @keyframes rotate {
-          0% { transform: rotate(0deg); }
-          100% { transform: rotate(360deg); }
-        }
-        
-        path[stroke] {
-          stroke-dasharray: 1000;
-          stroke-dashoffset: 1000;
-          animation: drawLine ${10 * speedMultiplier}s ease-in-out forwards;
-        }
-        
-        circle[fill] {
-          animation: pulsate ${3 * speedMultiplier}s ease-in-out infinite alternate;
-        }
-        
-        #connectors circle {
-          animation: glowConnector ${4 * speedMultiplier}s ease-in-out infinite;
-        }
-        
-        [id^="chip-"] {
-          animation: fadeInOut ${5 * speedMultiplier}s ease-in-out infinite;
-        }
-        
-        #grid-pattern {
-          animation: fadeInOut ${7 * speedMultiplier}s ease-in-out infinite alternate;
-        }
-        
-        .node-group {
-          animation: floatUp ${6 * speedMultiplier}s ease-in-out infinite;
-          animation-delay: calc(var(--delay, 0) * 1s);
-        }
-        
-        .connector-group {
-          animation: rotate ${15 * speedMultiplier}s linear infinite;
-          transform-origin: center;
-          animation-delay: calc(var(--delay, 0) * 1s);
-        }
-      `;
+      @keyframes glowConnector {
+        0% { opacity: 0.2; stroke-width: 1; }
+        50% { opacity: 0.8; stroke-width: 2; }
+        100% { opacity: 0.2; stroke-width: 1; }
+      }
       
+      @keyframes fadeInOut {
+        0% { opacity: 0.5; }
+        50% { opacity: 1; }
+        100% { opacity: 0.5; }
+      }
+      
+      @keyframes floatUp {
+        0% { transform: translateY(0); opacity: 0.6; }
+        50% { transform: translateY(-15px); opacity: 1; }
+        100% { transform: translateY(0); opacity: 0.6; }
+      }
+      
+      @keyframes rotate {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      
+      path[stroke] {
+        stroke-dasharray: 1000;
+        stroke-dashoffset: 1000;
+        animation: drawLine ${10 * speedMultiplier}s ease-in-out forwards;
+      }
+      
+      circle[fill] {
+        animation: pulsate ${3 * speedMultiplier}s ease-in-out infinite alternate;
+      }
+      
+      #connectors circle {
+        animation: glowConnector ${4 * speedMultiplier}s ease-in-out infinite;
+      }
+      
+      [id^="chip-"] {
+        animation: fadeInOut ${5 * speedMultiplier}s ease-in-out infinite;
+      }
+      
+      #grid-pattern {
+        animation: fadeInOut ${7 * speedMultiplier}s ease-in-out infinite alternate;
+      }
+      
+      .node-group {
+        animation: floatUp ${6 * speedMultiplier}s ease-in-out infinite;
+        animation-delay: calc(var(--delay, 0) * 1s);
+      }
+      
+      .connector-group {
+        animation: rotate ${15 * speedMultiplier}s linear infinite;
+        transform-origin: center;
+        animation-delay: calc(var(--delay, 0) * 1s);
+      }
+    `;
+    
+    try {
       svgDoc.head.appendChild(styleElement);
       
-      // Add custom attributes to enhance animations
       const nodeGroups = svgDoc.querySelectorAll('[id^="node-"]');
       nodeGroups.forEach((group, index) => {
-        group.classList.add('node-group');
-        group.setAttribute('style', `--delay: ${index * 0.5}`);
+        if (group instanceof Element) {
+          group.classList.add('node-group');
+          group.setAttribute('style', `--delay: ${index * 0.5}`);
+        }
       });
       
       const connectorGroups = svgDoc.querySelectorAll('[id^="connector-"]');
       connectorGroups.forEach((group, index) => {
-        group.classList.add('connector-group');
-        group.setAttribute('style', `--delay: ${index * 0.3}`);
+        if (group instanceof Element) {
+          group.classList.add('connector-group');
+          group.setAttribute('style', `--delay: ${index * 0.3}`);
+        }
       });
-    };
-    
-    // Start checking for SVG load
-    checkSvgLoaded();
-    
-    return () => {
-      // Cleanup if needed
-    };
-  }, [speed]);
+    } catch (error) {
+      console.error('Error animating SVG:', error);
+    }
+  }, [svgLoaded, speed]);
 
   // Fade in animation handled with CSS
   useEffect(() => {
