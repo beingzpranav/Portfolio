@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import '../../styles/pageWrapper.css';
 
 const PageWrapper = ({ children }: { children: React.ReactNode }) => {
@@ -38,7 +38,7 @@ const PageWrapper = ({ children }: { children: React.ReactNode }) => {
     // Simulate loading time or wait for resources to load
     const timer = setTimeout(() => {
       setLoading(false);
-    }, isMobile ? 1000 : 2000);
+    }, isMobile ? 1500 : 2500); // Use shorter time since we're using existing animation
 
     return () => clearTimeout(timer);
   }, [isMobile]);
@@ -114,58 +114,6 @@ const PageWrapper = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <div className="wrapper">
-      <AnimatePresence>
-        {loading && (
-          <motion.div 
-            initial={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.6, ease: "easeInOut" }}
-            className="loader-container"
-          >
-            <div className="flex flex-col items-center">
-              <motion.div
-                animate={ isMobile ? 
-                  { scale: [1, 1.1, 1] } : 
-                  { 
-                    scale: [1, 1.2, 1],
-                    borderRadius: ["20%", "50%", "20%"],
-                  }
-                }
-                transition={{ 
-                  duration: isMobile ? 1.5 : 2,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-                className="w-16 h-16 bg-primary/30 backdrop-blur-xl rounded-lg flex items-center justify-center"
-              >
-                <motion.div
-                  animate={ isMobile ? 
-                    { rotate: 360 } : 
-                    { 
-                      rotate: 360,
-                      scale: [0.8, 1, 0.8]
-                    }
-                  }
-                  transition={{ 
-                    duration: isMobile ? 2 : 3, 
-                    repeat: Infinity,
-                    ease: "linear"
-                  }}
-                  className="w-10 h-10 border-t-2 border-l-2 border-white rounded-full"
-                />
-              </motion.div>
-              <motion.p 
-                className="mt-4 text-white/70 text-sm"
-                animate={{ opacity: [0.5, 1, 0.5] }}
-                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-              >
-                Loading...
-              </motion.p>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
       <motion.div 
         variants={pageVariants}
         initial="hidden"
