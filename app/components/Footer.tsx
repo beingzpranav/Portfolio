@@ -181,7 +181,7 @@ const Footer = () => {
             </motion.h3>
             <div className="flex flex-col gap-3 max-w-xs mx-auto lg:mx-0">
               <motion.a 
-                href="buymeacoffee.com/beingzpranav_" 
+                href="https://buymeacoffee.com/beingzpranav_" 
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-[#0EA5E9] hover:bg-[#0EA5E9]/90 text-white transition-colors w-full text-sm"
