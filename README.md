@@ -1,65 +1,65 @@
-# Pranav Khandelwal - Portfolio
+# Portfolio - Pranav K
 
-A modern, animated portfolio website built with Next.js, TypeScript, and Framer Motion.
 
-![Portfolio Preview](public/portfolio-preview.png)
+## 🚀 Live Demo
 
-## Features
+Check out my portfolio live at [pranavk.tech](https://pranavk.tech)
 
-### Visual Design
-- **Dark Mode Interface**: Sleek, professional dark theme with accent colors
-- **Animated Components**: Smooth, modern animations using Framer Motion
-- **Responsive Design**: Fully optimized for all devices from mobile to desktop
-- **Modern Loader**: Stylish loading animation for seamless page transitions
-- **Dynamic Code Animations**: Floating code icons and programming syntax animations
+## 📝 Description
 
-### Technical Features
-- **Next.js Framework**: Built with Next.js for optimized performance and SEO
-- **TypeScript**: Type-safe code for better development experience
-- **Smooth Scrolling**: Enhanced user experience with smooth scrolling
-- **Optimized Images**: Next.js Image component for optimized image loading
-- **Animated Transitions**: Page transitions and component animations
+This repository contains the source code for my personal portfolio website. The site showcases my projects, skills, and professional experience, and serves as a central hub for my online presence.
+![pranavk tech_](https://github.com/user-attachments/assets/a7c2866a-f428-41a9-997d-e2b419ff31ba)
+![pranavk tech_ (1)](https://github.com/user-attachments/assets/85155885-aabd-407d-b2bf-e5e478a00936)
+![pranavk tech_ (2)](https://github.com/user-attachments/assets/71c497c8-cc44-4588-91d2-079284d7d3be)
 
-### Sections
-- **Hero Section**: Animated introduction with developer details
-- **Projects Showcase**: Highlighted projects with descriptions and links
-- **Skills Display**: Visual representation of technical skills and expertise
-- **Interactive Navigation**: Smooth-scrolling navigation with hover effects
 
-## Technology Stack
+## ✨ Features
 
-- **Frontend**: Next.js, TypeScript, React
-- **Styling**: Tailwind CSS
-- **Animations**: Framer Motion
-- **Deployment**: Vercel/Netlify
+- Responsive design that works on desktop, tablet, and mobile devices
+- Project showcase with detailed descriptions
+- Skills and technology expertise section
+- Professional experience timeline
+- Contact form for reaching out
+- Dark/light mode support
+- Fast loading and optimized performance
 
-## Development
+## 🛠️ Technologies Used
 
-To run this project locally:
+- Frontend Framework: [Your framework here, e.g., React, Next.js, etc.]
+- Styling: [CSS/SCSS/Tailwind/etc.]
+- Deployment: [Hosting platform]
+- Additional Tools: [Any other notable tools or libraries]
 
-```bash
-# Install dependencies
-npm install
+## 🏗️ Project Structure
 
-# Run the development server
-npm run dev
+```
+/Portfolio/
+├── public/          # Static files
+├── src/             # Source files
+│   ├── components/  # Reusable components
+│   ├── pages/       # Page components
+│   ├── styles/      # CSS/SCSS files
+│   └── ...          # Other directories
+├── README.md        # This file
+└── ...              # Configuration files
 ```
 
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-## Design Philosophy
 
-This portfolio showcases modern web development techniques with a focus on:
-- **Performance**: Fast loading and rendering
-- **Animation**: Tasteful, purposeful animations that enhance UX
-- **Typography**: Clear hierarchy and readable text
-- **Interactivity**: Responsive interactions that engage users
-- **Code Quality**: Clean, well-structured TypeScript code
 
-## Contact
+## 📬 Contact
 
-For any inquiries, please reach out via email or connect through LinkedIn.
+Feel free to reach out to me through any of these platforms:
+
+- GitHub: [beingzpranav](https://github.com/beingzpranav)
+- LinkedIn: [beingzpranav](https://linkedin.com/in/beingzpranav)
+- Instagram: [beingzpranav_](https://instagram.com/beingzpranav_)
+- Twitter: [beingzpranav_](https://x.com/beingzpranav_)
+- Discord: [beingzpranav](https://discordapp.com/users/833363964192751626)
+- Email: [contact@pranavk.tech](mailto:contact@pranavk.tech)
 
 ---
 
-© 2023 Pranav Khandelwal. All Rights Reserved. 
+<div align="center">
+  <p>Built with ❤️ by Pranav K</p>
+</div>
