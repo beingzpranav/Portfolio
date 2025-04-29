@@ -1,86 +1,61 @@
 "use client";
 
-import { motion } from 'framer-motion';
-import { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import '../../styles/pyramidLoader.css';
 
 const ModernLoader = () => {
-  const [isLoading, setIsLoading] = useState(true);
-
+  const [isLoaded, setIsLoaded] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+  
   useEffect(() => {
-    // Simulate minimum loading time of 1.5 seconds
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
     const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 1500);
-
-    return () => clearTimeout(timer);
-  }, []);
-
-  if (!isLoading) return null;
+      setIsLoaded(true);
+    }, isMobile ? 3000 : 4000);
+    
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener('resize', checkMobile);
+    };
+  }, [isMobile]);
 
   return (
-    <motion.div
-      initial={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      className="fixed inset-0 z-50 flex items-center justify-center bg-dark"
-    >
-      <div className="relative">
-        {/* Outer circle */}
+    <AnimatePresence>
+      {!isLoaded && (
         <motion.div
-          className="absolute inset-0 border-2 border-primary rounded-full w-16 h-16"
-          animate={{
-            scale: [1, 1.2, 1],
-            opacity: [1, 0.5, 1],
+          className="fixed inset-0 z-[1000] flex items-center justify-center bg-dark"
+          exit={{
+            opacity: 0,
+            transition: { duration: 0.8, ease: "easeInOut" }
           }}
-          transition={{
-            duration: 2,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        />
-        
-        {/* Inner circle */}
-        <motion.div
-          className="border-2 border-white rounded-full w-12 h-12"
-          animate={{
-            rotate: 360,
-            scale: [1, 0.8, 1],
-          }}
-          transition={{
-            duration: 1.5,
-            repeat: Infinity,
-            ease: "linear"
-          }}
-        />
-        
-        {/* Center dot */}
-        <motion.div
-          className="absolute inset-0 m-auto w-2 h-2 bg-primary rounded-full"
-          animate={{
-            scale: [1, 1.5, 1],
-          }}
-          transition={{
-            duration: 1,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        />
-      </div>
-      
-      {/* Loading text */}
-      <motion.p
-        className="absolute bottom-1/4 text-lg font-light tracking-wider text-primary"
-        animate={{
-          opacity: [0.5, 1, 0.5],
-        }}
-        transition={{
-          duration: 2,
-          repeat: Infinity,
-          ease: "easeInOut"
-        }}
-      >
-        LOADING
-      </motion.p>
-    </motion.div>
+        >
+          <div className="loader-container">
+            <div className="outer-circle"></div>
+            <div className="inner-circle"></div>
+            <div className="center-dot"></div>
+            <div className="text">
+              <span className="letter" style={{ '--index': 0 } as React.CSSProperties}>L</span>
+              <span className="letter" style={{ '--index': 1 } as React.CSSProperties}>o</span>
+              <span className="letter" style={{ '--index': 2 } as React.CSSProperties}>a</span>
+              <span className="letter" style={{ '--index': 3 } as React.CSSProperties}>d</span>
+              <span className="letter" style={{ '--index': 4 } as React.CSSProperties}>i</span>
+              <span className="letter" style={{ '--index': 5 } as React.CSSProperties}>n</span>
+              <span className="letter" style={{ '--index': 6 } as React.CSSProperties}>g</span>
+              <span className="letter dot-1" style={{ '--index': 7 } as React.CSSProperties}>.</span>
+              <span className="letter dot-2" style={{ '--index': 8 } as React.CSSProperties}>.</span>
+              <span className="letter dot-3" style={{ '--index': 9 } as React.CSSProperties}>.</span>
+            </div>
+          </div>
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 };
 

@@ -40,14 +40,11 @@ export default function RootLayout({
         <link rel="icon" href="/logo.svg" type="image/svg+xml" />
       </head>
       <body className={`${inter.className} motion-code overflow-x-hidden`}>
-        {/* Modern Loader */}
         <ModernLoader />
         
-        {/* Background animated code icons */}
         <AnimatedCodeIcons position="top-right" size="lg" opacity={0.1} />
         <AnimatedCodeIcons position="bottom-left" size="md" opacity={0.08} />
         
-        {/* Page entrance animation overlay */}
         <div className="page-entrance-overlay">
           <div className="code-reveal">
             <div className="code-line line1">&lt;<span className="keyword">Portfolio</span>&gt;</div>

@@ -248,8 +248,16 @@ const Skills = () => {
                   {/* Skill icon */}
                   <motion.div
                     animate={{ y: [0, -3, 0] }}
-                    transition={{ duration: 2, repeat: Infinity, repeatType: "reverse" }}
+                    transition={{ duration: 2, repeat: Infinity, repeatType: "mirror" }}
+                    className="flex items-center justify-center p-4"
                   >
+                    <Image
+                      src={skill.icon}
+                      alt={skill.name}
+                      width={40}
+                      height={40}
+                      className="object-contain max-h-[30px] w-auto filter brightness-110"
+                    />
                     {/* Replace generic SVG with specific icons based on skill name */}
                     <img 
                       src={skill.icon} 

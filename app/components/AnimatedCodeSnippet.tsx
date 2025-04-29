@@ -10,7 +10,7 @@ interface AnimatedCodeSnippetProps {
 
 const AnimatedCodeSnippet: React.FC<AnimatedCodeSnippetProps> = ({
   autoDisappear = true,
-  disappearDelay = 5000, // 5 seconds
+  disappearDelay = 5000,
 }) => {
   const [isVisible, setIsVisible] = useState(true);
   const [typingComplete, setTypingComplete] = useState(false);
@@ -26,12 +26,10 @@ const AnimatedCodeSnippet: React.FC<AnimatedCodeSnippetProps> = ({
     "</Portfolio>"
   ];
 
-  // Calculate the total typing time for the animation timing
-  const typingSpeed = 50; // ms per character
+  const typingSpeed = 50;
   const totalCharacters = codeText.join('').length;
   const totalTypingTime = totalCharacters * typingSpeed;
 
-  // Typing animation effect
   useEffect(() => {
     const intervalId = setInterval(() => {
       if (currentTextIndex < codeText.length) {
@@ -40,7 +38,6 @@ const AnimatedCodeSnippet: React.FC<AnimatedCodeSnippetProps> = ({
         clearInterval(intervalId);
         setTypingComplete(true);
         
-        // Auto disappear after delay if enabled
         if (autoDisappear) {
           const timerId = setTimeout(() => {
             setIsVisible(false);
@@ -49,12 +46,11 @@ const AnimatedCodeSnippet: React.FC<AnimatedCodeSnippetProps> = ({
           return () => clearTimeout(timerId);
         }
       }
-    }, typingSpeed * 5); // Show a new line every few characters
+    }, typingSpeed * 5);
     
     return () => clearInterval(intervalId);
   }, [currentTextIndex, autoDisappear, disappearDelay]);
 
-  // Add keyboard event listener to close when typing is complete
   useEffect(() => {
     const handleKeyDown = () => {
       if (typingComplete) {
@@ -163,8 +159,7 @@ const AnimatedCodeSnippet: React.FC<AnimatedCodeSnippetProps> = ({
                     </div>
                   </motion.div>
                 ))}
-              
-                {/* Blinking cursor */}
+                
                 {!typingComplete && (
                   <motion.div 
                     className="absolute h-5 w-2 bg-primary inline-block ml-1"

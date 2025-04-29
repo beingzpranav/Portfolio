@@ -9,7 +9,6 @@ const PageWrapper = ({ children }: { children: React.ReactNode }) => {
   const animatedElementsRef = useRef<HTMLElement[]>([]);
   const [isMobile, setIsMobile] = useState(false);
   
-  // Fix for mobile viewport height
   useEffect(() => {
     const setVh = () => {
       const vh = window.innerHeight * 0.01;
@@ -22,7 +21,6 @@ const PageWrapper = ({ children }: { children: React.ReactNode }) => {
     return () => window.removeEventListener('resize', setVh);
   }, []);
 
-  // Check if device is mobile
   useEffect(() => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768);
@@ -33,27 +31,22 @@ const PageWrapper = ({ children }: { children: React.ReactNode }) => {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  // Loading animation - reduced time on mobile
   useEffect(() => {
-    // Simulate loading time or wait for resources to load
     const timer = setTimeout(() => {
       setLoading(false);
-    }, isMobile ? 1500 : 2500); // Use shorter time since we're using existing animation
+    }, isMobile ? 1500 : 2500);
 
     return () => clearTimeout(timer);
   }, [isMobile]);
 
-  // Animate elements on scroll - optimized
   useEffect(() => {
     if (loading) return;
 
     const animateOnScroll = () => {
-      // Find all elements with aos-animate class
       const animatedElements = document.querySelectorAll('.aos-animate');
       animatedElementsRef.current = Array.from(animatedElements) as HTMLElement[];
 
       const checkVisibility = () => {
-        // Use requestAnimationFrame for better performance
         requestAnimationFrame(() => {
           animatedElementsRef.current.forEach(element => {
             const rect = element.getBoundingClientRect();
@@ -66,10 +59,8 @@ const PageWrapper = ({ children }: { children: React.ReactNode }) => {
         });
       };
 
-      // Initial check
       checkVisibility();
 
-      // Add scroll listener with throttling for performance
       let isScrolling = false;
       const scrollListener = () => {
         if (!isScrolling) {
@@ -90,7 +81,6 @@ const PageWrapper = ({ children }: { children: React.ReactNode }) => {
     return () => clearTimeout(initAnimation);
   }, [loading]);
 
-  // Page transition variants - simplified for mobile
   const pageVariants = {
     hidden: { opacity: 0 },
     visible: { 
