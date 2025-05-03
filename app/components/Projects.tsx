@@ -48,6 +48,15 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
+      title: 'Intern Match',
+      description: 'A platform designed to streamline the internship hiring process, connecting students with opportunities and recruiters efficiently.',
+      image: '/projects/Intern Match.png',
+      tags: ['React', 'Tailwind CSS', 'Node.js', 'Supabase', 'Vite'],
+      link: 'https://intermatch.pranavk.tech/',
+      github: 'https://github.com/beingzpranav/InternMatch'
+    },
+    {
+      id: 2,
       title: 'Portfolio Website',
       description: 'A modern portfolio website built with Next.js and Tailwind CSS featuring smooth animations and responsive design.',
       image: '/projects/Portfolio.png',
@@ -56,7 +65,7 @@ const Projects = () => {
       github: 'https://github.com/beingzpranav/portfolio'
     },
     {
-      id: 2,
+      id: 3,
       title: 'Silver-Jubilee',
       description: '"A beautiful celebration website for a 25th wedding anniversary, featuring event details and photo gallery.',
       image: '/projects/silver-jubilee.png',
