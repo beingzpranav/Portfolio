@@ -50,7 +50,7 @@ const Projects = () => {
       id: 1,
       title: 'Intern Match',
       description: 'A platform designed to streamline the internship hiring process, connecting students with opportunities and recruiters efficiently.',
-      image: '/projects/Intern Match.png',
+      image: '/projects/internmatch.png',
       tags: ['React', 'Tailwind CSS', 'Node.js', 'Supabase', 'Vite'],
       link: 'https://intermatch.pranavk.tech/',
       github: 'https://github.com/beingzpranav/InternMatch'
