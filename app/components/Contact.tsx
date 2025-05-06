@@ -12,6 +12,7 @@ const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [isError, setIsError] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
   const [activeField, setActiveField] = useState<string | null>(null);
 
   const containerVariants = {
@@ -53,6 +54,7 @@ const Contact = () => {
     // Form validation
     if (!formState.name || !formState.email || !formState.message) {
       setIsError(true);
+      setErrorMessage('Please fill out all fields.');
       setTimeout(() => setIsError(false), 3000);
       return;
     }
@@ -68,22 +70,24 @@ const Contact = () => {
         body: JSON.stringify(formState),
       });
       
+      const data = await response.json();
+      
       if (response.ok) {
         setIsSuccess(true);
         setFormState({ name: '', email: '', message: '' });
-        
         // Reset success message after 5 seconds
         setTimeout(() => setIsSuccess(false), 5000);
       } else {
-        const error = await response.json();
-        console.error('Error submitting form:', error);
+        console.error('Error submitting form:', data);
         setIsError(true);
-        setTimeout(() => setIsError(false), 3000);
+        setErrorMessage(data.error || 'Failed to send message. Please try again.');
+        setTimeout(() => setIsError(false), 5000);
       }
     } catch (error) {
       console.error('Error submitting form:', error);
       setIsError(true);
-      setTimeout(() => setIsError(false), 3000);
+      setErrorMessage('An unexpected error occurred. Please try again later.');
+      setTimeout(() => setIsError(false), 5000);
     } finally {
       setIsSubmitting(false);
     }
@@ -177,9 +181,7 @@ const Contact = () => {
                   <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
-                  <span>{formState.name && formState.email && formState.message ? 
-                    "Failed to send message. Please try again or contact directly via email." : 
-                    "Please fill out all fields."}</span>
+                  <span>{errorMessage}</span>
                 </motion.div>
               )}
             </AnimatePresence>
@@ -358,4 +360,4 @@ const Contact = () => {
   );
 };
 
-export default Contact; 
+export default Contact;
