@@ -1,5 +1,29 @@
 import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
+import dns from 'dns';
+import { promisify } from 'util';
+
+// Convert dns.resolveMx to promise-based function
+const resolveMx = promisify(dns.resolveMx);
+
+// Function to validate email format
+function isValidEmailFormat(email: string): boolean {
+  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  return emailRegex.test(email);
+}
+
+// Function to validate email domain
+async function isValidEmailDomain(email: string): Promise<boolean> {
+  try {
+    const domain = email.split('@')[1];
+    // Check if MX records exist for the domain
+    const mxRecords = await resolveMx(domain);
+    return mxRecords.length > 0;
+  } catch (error) {
+    console.error('Error validating email domain:', error);
+    return false;
+  }
+}
 
 export async function POST(request: Request) {
   try {
@@ -9,6 +33,23 @@ export async function POST(request: Request) {
     if (!name || !email || !message) {
       return NextResponse.json(
         { error: 'Name, email, and message are required' },
+        { status: 400 }
+      );
+    }
+
+    // Validate email format
+    if (!isValidEmailFormat(email)) {
+      return NextResponse.json(
+        { error: 'Please enter a valid email address' },
+        { status: 400 }
+      );
+    }
+
+    // Validate email domain
+    const isValidDomain = await isValidEmailDomain(email);
+    if (!isValidDomain) {
+      return NextResponse.json(
+        { error: 'Email domain appears to be invalid' },
         { status: 400 }
       );
     }
@@ -59,4 +100,4 @@ export async function POST(request: Request) {
       { status: 500 }
     );
   }
-} 
+}
