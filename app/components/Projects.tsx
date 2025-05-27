@@ -67,7 +67,7 @@ const Projects = () => {
     {
       id: 3,
       title: 'Silver-Jubilee',
-      description: '"A beautiful celebration website for a 25th wedding anniversary, featuring event details and photo gallery.',
+      description: 'A beautiful celebration website for a 25th wedding anniversary, featuring event details and photo gallery.',
       image: '/projects/silver-jubilee.png',
       tags: ['HTML', 'CSS', 'JavaScript'],
       link: 'https://beingzpranav.github.io/Silver-Jubilee/',

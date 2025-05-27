@@ -306,7 +306,7 @@ const Skills = () => {
           </motion.p>
           
           <div className="flex flex-wrap justify-center gap-2">
-            {['Three.js',  'Blockchain',  'Python'].map((skill, index) => (
+            {['LLM',  'Blockchain',  'Python'].map((skill, index) => (
               <motion.span
                 key={skill}
                 className="px-3 py-1 text-xs bg-[#1E293B] text-primary rounded-full"
