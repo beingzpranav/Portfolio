@@ -110,6 +110,7 @@ const Footer = () => {
               {[
                 { name: 'GitHub', icon: 'github', href: 'https://github.com/beingzpranav' },
                 { name: 'LinkedIn', icon: 'linkedin', href: 'https://linkedin.com/in/beingzpranav' },
+                { name: 'Peerlist', icon: 'peerlist', href: 'https://peerlist.io/beingzpranav' },
                 { name: 'Instagram', icon: 'instagram', href: 'https://instagram.com/beingzpranav_' },
                 { name: 'Twitter', icon: 'twitter', href: 'https://x.com/beingzpranav_' },
                 { name: 'Discord', icon: 'discord', href: 'https://discordapp.com/users/833363964192751626' },
